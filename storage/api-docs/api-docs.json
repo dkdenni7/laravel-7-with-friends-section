@@ -1,0 +1,206 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Laravel with connections portal ",
+        "description": "Swagger creates human-readable documentation for your APIs.",
+        "version": "3.0"
+    },
+    "host": "10.1.173.140:8005",
+    "basePath": "/api",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/getInbox": {
+            "get": {
+                "tags": [
+                    "Chat"
+                ],
+                "summary": "Get inbox information",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Enter Authorization Token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "page",
+                        "required": true,
+                        "type": "number"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/getChat": {
+            "get": {
+                "tags": [
+                    "Chat"
+                ],
+                "summary": "Get chat with a user",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Enter Authorization Token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "page",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "description": "user id",
+                        "required": true,
+                        "type": "number"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/connections/getFriends": {
+            "get": {
+                "tags": [
+                    "connections"
+                ],
+                "summary": "Get all friends with search functionality with q parameter",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Enter Token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "description": "enter any user name in q parameter for search specific blocked user",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "pro_job_id",
+                        "in": "query",
+                        "description": "pro_job_id",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/connections/getRecomendedFriends": {
+            "get": {
+                "tags": [
+                    "connections"
+                ],
+                "summary": "Get all refered",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Enter Token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "description": "enter any user name in q parameter for search specific blocked user",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {}
+}
